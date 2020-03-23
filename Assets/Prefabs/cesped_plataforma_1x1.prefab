@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6774592376228171635}
   m_Layer: 0
   m_Name: cesped_plataforma_1x1
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
