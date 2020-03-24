@@ -593,7 +593,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!61 &1650348509
 BoxCollider2D:
@@ -636,6 +636,7 @@ MonoBehaviour:
   maxSpeed: 5
   speed: 25
   grounded: 0
+  jumpPower: 6.5
 --- !u!1001 &1771428542
 PrefabInstance:
   m_ObjectHideFlags: 0
