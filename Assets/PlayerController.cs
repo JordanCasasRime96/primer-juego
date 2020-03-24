@@ -72,8 +72,9 @@ public class PlayerController : MonoBehaviour
 
         if(jump) //Si generas un salto
         {
+            rb2d.velocity = new Vector2(rb2d.velocity.x, 0); //Si saltas, tu velocidad Y es cero.
             rb2d.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse); //Creas una fuerza hacia arriba
-            jump = false;
+            jump = false; //No puedes saltar
         }
 
     }
