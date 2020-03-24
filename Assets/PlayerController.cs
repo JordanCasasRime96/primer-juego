@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float maxSpeed = 5f;
-    public float speed = 25f;
+    public float speed = 100f;
     public bool grounded;
     public float jumpPower = 6.5f;
 
@@ -34,6 +34,14 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
+        Vector3 fixedVelocity = rb2d.velocity;
+        fixedVelocity.x *= 0.75f; //Aumentar la fricción al caminar en el suelo
+
+        if (grounded) //Si tocas el suelo aplicas la fricción
+        {
+            rb2d.velocity = fixedVelocity;
+        }
+
         float h = Input.GetAxis("Horizontal");
         rb2d.AddForce(Vector2.right * speed * h);
 
@@ -67,5 +75,12 @@ public class PlayerController : MonoBehaviour
             rb2d.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse); //Creas una fuerza hacia arriba
             jump = false;
         }
+
+    }
+
+    //Reaparecer del inicio cuando salgas del limite
+    void OnBecameInvisible()
+    {
+        transform.position = new Vector3(0, 0, 0);
     }
 }
