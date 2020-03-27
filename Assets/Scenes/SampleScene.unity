@@ -1437,16 +1437,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 315792783343910118, guid: e8d857bce4eb31f40b9056a2f05de3fd,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 315792783343910118, guid: e8d857bce4eb31f40b9056a2f05de3fd,
-        type: 3}
-      propertyPath: m_TagString
-      value: Untagged
-      objectReference: {fileID: 0}
     - target: {fileID: 315792783343910117, guid: e8d857bce4eb31f40b9056a2f05de3fd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1501,21 +1491,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 315792785006891527, guid: e8d857bce4eb31f40b9056a2f05de3fd,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 315792785006891527, guid: e8d857bce4eb31f40b9056a2f05de3fd,
-        type: 3}
-      propertyPath: m_Name
-      value: Ground_Collider
-      objectReference: {fileID: 0}
-    - target: {fileID: 315792785006891527, guid: e8d857bce4eb31f40b9056a2f05de3fd,
-        type: 3}
-      propertyPath: m_TagString
-      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e8d857bce4eb31f40b9056a2f05de3fd, type: 3}
@@ -1584,19 +1559,6 @@ PrefabInstance:
     - target: {fileID: 2561456495747555071, guid: 0ac47cace806504408b59da32dc08b1a,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2561456495747555065, guid: 0ac47cace806504408b59da32dc08b1a,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1644065798, guid: 0ac47cace806504408b59da32dc08b1a, type: 3}
-      propertyPath: m_Name
-      value: Player_Collider
-      objectReference: {fileID: 0}
-    - target: {fileID: 1644065798, guid: 0ac47cace806504408b59da32dc08b1a, type: 3}
-      propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

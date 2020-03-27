@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1644065799}
   - component: {fileID: 1644065800}
-  m_Layer: 9
-  m_Name: PlayerCollider
+  m_Layer: 0
+  m_Name: Player_Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -56,8 +56,8 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.17693186, y: 0.5339365}
-      - {x: -0.16565323, y: 0.5334178}
+    - - {x: 0.16883063, y: 0.60414886}
+      - {x: -0.16565323, y: 0.60363007}
       - {x: -0.35215855, y: 0.29371428}
       - {x: -0.16150618, y: 0.10521364}
       - {x: 0.16764021, y: 0.10821843}

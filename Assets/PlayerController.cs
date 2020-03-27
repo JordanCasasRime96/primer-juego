@@ -6,18 +6,21 @@ public class PlayerController : MonoBehaviour
 {
     public float maxSpeed = 5f;
     public float speed = 100f;
-    public bool grounded;
+    public bool grounded; //Estas tocando el suelo?
     public float jumpPower = 6.5f;
 
-    private Rigidbody2D rb2d;
-    private Animator anim;
-    private bool jump;
+    private Rigidbody2D rb2d; //Fisica del personaje
+    private Animator anim; //Verifica la animacion
+    private SpriteRenderer spr; //Cambios al sprite, utilizado para el color rojizo del personaje
+    private bool jump; //Verifica que estes saltando
+    private bool movement = true;
 
     // Start is called before the first frame update
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        spr = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -43,6 +46,9 @@ public class PlayerController : MonoBehaviour
         }
 
         float h = Input.GetAxis("Horizontal");
+
+        if (!movement) h = 0;
+
         rb2d.AddForce(Vector2.right * speed * h);
 
         //Limitar la aceleración al caminar
@@ -82,6 +88,32 @@ public class PlayerController : MonoBehaviour
     //Reaparecer del inicio cuando salgas del limite
     void OnBecameInvisible()
     {
-        transform.position = new Vector3(0, 0, 0);
+        transform.position = new Vector3(-1, 0, 0);
+    }
+    
+    //Cuando pisas a un enemigo y rebotas
+    public void EnemyJump()
+    {
+        jump = true; //Saltar
+    }
+
+    //Cuando un enemigo te haga daño, te empujaras y saltando a la vez.
+    public void EnemyKnockBack(float enemyPosX)
+    {
+        jump = true;
+
+        float side = Mathf.Sign(enemyPosX - transform.position.x); //Mathf Te devuelve 2 valores {-1, 1} y mediante la posicion del enemigo te redirecciona un empuje.
+        rb2d.AddForce(Vector2.left * side * jumpPower, ForceMode2D.Impulse); //Fuerza que te empuja el enemigo
+        movement = false;
+        Invoke("EnableMovement", 0.7f);
+        //spr.color = Color.red; //Convierte al personaje en rojo al recibir daño
+        Color color = new Color(255/255f, 106/255f, 0/255f); //Color parecido al naranja en RGB(255, 106, 0); 
+        spr.color = color; //Cambia al color escogido
+    }
+
+    void EnableMovement()
+    {
+        movement = true;
+        spr.color = Color.white;
     }
 }

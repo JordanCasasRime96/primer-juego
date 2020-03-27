@@ -16,7 +16,7 @@ public class EnemyController : MonoBehaviour
 
     void FixedUpdate()
     {
-        rb2d.AddForce(Vector2.right * speed);
+        rb2d.AddForce(Vector2.right * speed); //Desplazamiento lateral
         float limitedSpeed = Mathf.Clamp(rb2d.velocity.x, -maxSpeed, maxSpeed);
         rb2d.velocity = new Vector2(limitedSpeed, rb2d.velocity.y);
 
@@ -36,7 +36,12 @@ public class EnemyController : MonoBehaviour
             float yOffset = 0.4f;
             if ((transform.position.y + yOffset) < col.transform.position.y)
             {
+                col.SendMessageUpwards("EnemyJump");
                 Destroy(gameObject);
+            }
+            else
+            {
+                col.SendMessageUpwards("EnemyKnockBack", transform.position.x);
             }
         }
     }
