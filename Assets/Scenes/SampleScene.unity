@@ -2259,6 +2259,16 @@ PrefabInstance:
       propertyPath: m_Radius
       value: 0.16806817
       objectReference: {fileID: 0}
+    - target: {fileID: 315792783343910112, guid: e8d857bce4eb31f40b9056a2f05de3fd,
+        type: 3}
+      propertyPath: jumpPower
+      value: 9.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 315792783343910112, guid: e8d857bce4eb31f40b9056a2f05de3fd,
+        type: 3}
+      propertyPath: maxSpeed
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e8d857bce4eb31f40b9056a2f05de3fd, type: 3}
 --- !u!1001 &2561456496770027290

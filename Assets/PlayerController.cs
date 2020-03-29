@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
     public float maxSpeed = 5f;
     public float speed = 100f;
     public bool grounded; //Estas tocando el suelo?
-    public float jumpPower = 6.5f;
+    public float jumpPower;
 
     private Rigidbody2D rb2d; //Fisica del personaje
     private Animator anim; //Verifica la animacion
@@ -26,8 +26,10 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        anim.SetFloat("Speed", Mathf.Abs(rb2d.velocity.x));
+        //Variables para las trasiciones de animaciones.
+        anim.SetFloat("Speed_X", Mathf.Abs(rb2d.velocity.x));
         anim.SetBool("Grounded", grounded);
+        anim.SetFloat("Speed_Y", rb2d.velocity.y);
 
         if (Input.GetKeyDown(KeyCode.UpArrow) && grounded) //Si presionar arriba y estas tocando el suelo
         {
